@@ -37,7 +37,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.0
-Release:        0.14.alpha6.13%{?dist}
+Release:        0.14.alpha6.14%{?dist}
 Epoch:          0
 Summary:        Plexus Interactivity Handler Component
 License:        MIT
@@ -53,10 +53,10 @@ BuildArch:      noarch
 BuildRequires:  %{?scl_prefix_java_common}javapackages-tools
 BuildRequires:  %{?scl_prefix_java_common}ant >= 0:1.6
 BuildRequires:  %{?scl_prefix_java_common}maven-local
-BuildRequires:  maven30-maven-resources-plugin
-BuildRequires:  maven30-jline
-BuildRequires:  maven30-plexus-utils
-BuildRequires:  maven30-plexus-component-api
+BuildRequires:  %{?scl_prefix}maven-resources-plugin
+BuildRequires:  %{?scl_prefix}jline
+BuildRequires:  %{?scl_prefix}plexus-utils
+BuildRequires:  %{?scl_prefix}plexus-component-api
 
 %description
 The Plexus project seeks to create end-to-end developer tools for
@@ -86,7 +86,7 @@ jline module for %{pkg_name}.
 
 %prep
 %setup -q -n plexus-interactivity-1.0-alpha-6
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %patch1 -p1
 
@@ -94,7 +94,7 @@ set -e -x
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_package ":plexus-interactivity"
 
@@ -102,7 +102,7 @@ set -e -x
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_install
 %{?scl:EOF}
@@ -119,6 +119,9 @@ set -e -x
 %files javadoc -f .mfiles-javadoc
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:1.0-0.14.alpha6.14
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 0:1.0-0.14.alpha6.13
 - maven33 rebuild
 
