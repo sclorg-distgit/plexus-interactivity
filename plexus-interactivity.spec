@@ -37,7 +37,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.0
-Release:        0.14.alpha6.14%{?dist}
+Release:        0.14.alpha6.15%{?dist}
 Epoch:          0
 Summary:        Plexus Interactivity Handler Component
 License:        MIT
@@ -52,7 +52,7 @@ Patch1:         plexus-interactivity-dependencies.patch
 BuildArch:      noarch
 BuildRequires:  %{?scl_prefix_java_common}javapackages-tools
 BuildRequires:  %{?scl_prefix_java_common}ant >= 0:1.6
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 BuildRequires:  %{?scl_prefix}maven-resources-plugin
 BuildRequires:  %{?scl_prefix}jline
 BuildRequires:  %{?scl_prefix}plexus-utils
@@ -119,6 +119,9 @@ set -e -x
 %files javadoc -f .mfiles-javadoc
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0:1.0-0.14.alpha6.15
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:1.0-0.14.alpha6.14
 - maven33 rebuild #2
 
