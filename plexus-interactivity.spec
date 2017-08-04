@@ -3,7 +3,7 @@
 
 Name:           %{?scl_prefix}plexus-interactivity
 Version:        1.0
-Release:        0.23.alpha6.1%{?dist}
+Release:        0.23.alpha6.2%{?dist}
 Epoch:          0
 Summary:        Plexus Interactivity Handler Component
 License:        MIT
@@ -73,6 +73,9 @@ jline module for %{pkg_name}.
 %files javadoc -f .mfiles-javadoc
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 0:1.0-0.23.alpha6.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 0:1.0-0.23.alpha6.1
 - Automated package import and SCL-ization
 
